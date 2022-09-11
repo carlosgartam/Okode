@@ -1,33 +1,69 @@
-<div class="container ">
-    <div class="m-3  row text-center">
-        <h1>{{peliActual.Title}}</h1>
-    </div>
-
-    <div class="m-3  row text-center">
-        <img src={{peliActual.Poster}}> 
-    </div>
-    
-    <div class="m-3  row text-center">
+<div class="container">
+    <div class='d-flex justify-content-center row>'>
         <div class="col">
+            <div class="m-3  row text-center">
+                <h1>{{peliActual.Title}}</h1>
+            </div>
+            <div style="text-align : center">
+                <img src={{peliActual.Poster}} ali>
+            </div>
+    
+    
+            <div class="m-3  row text-center ">
+                <div class="m-3  row text-center">
+                    <div class="col-3">
+                        <label>
+                            <h2>Año</h2> 
+                        </label>
+                    </div>
+                    <div class="col-3">
+                        <h2>
+                            <input type="text" id="lname" name="lname" value={{peliActual.Year}} disabled>
+                        </h2>
+                        
+                    </div>
+    
+                </div>
+                <div class="m-3  row text-center">
+                    <div class="col-3">
+                        <label> <h2>Idioma</h2> </label>
+                    </div>
+                    <div class="col-3">
+                        <h2>
+                            <input type="text" id="lname" name="lname" value={{peliActual.Language}} disabled>
+                        </h2>
+                        
+                    </div>
+                </div>
+                <div class="m-3  row text-center">
+                    <div class="col-3">
+                        <label> <h2>Descripcion</h2> </label>
+                    </div>
+                    <div class="col-9">
+                        <h2>
+                            <label>
+                            <textarea id="w3review" name="w3review" rows="4" cols="60"
+                                disabled>{{peliActual.Plot}} 
+                            </textarea>
+                        </label>
+                    </h2>
+                        
+    
+                    </div>
+                </div>
+    
+            </div>
+
+            <div class="row">
+
+                <a href="pelis">
+                    <button>Volver a buscar</button>
+                  </a> 
+            </div>
+
         </div>
-        <div class="m-3  row text-center">
-        </div>
+
+        
+
     </div>
-
-
-</div>
-
-<div>
-    
-    <h2>
-        {{peliActual.Language}}
-    </h2>
-    <h2>
-        {{peliActual.Year}}
-    </h2>
-    <h2>
-        {{peliActual.Plot}}
-    </h2>
-    
-    <img src={{peliActual.Poster}}>
 </div>

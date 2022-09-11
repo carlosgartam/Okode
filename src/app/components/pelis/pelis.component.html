@@ -1,33 +1,55 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <div class="container-md">
+      <a  style = "  text-align: center; color: aliceblue;"class="navbar-brand ">
+        <h1>
+            LISTADO DE PELICULAS
+        </h1>
+    </a>
+    </div>
+  </nav>
 <div class="container ">
-    <div class="m-3  row text-center">
-        <h1>Lista de peliculas</h1>
-    </div>
-    <div class="m-3  row text-center ">
-        <div class="search">
-            <input class=m-3 type="text" #busqueda placeholder="Buscar Película">
-            <img (click)="getPeliculas(busqueda.value)" src="../../../assets/search.svg" alt="search">
-        </div>
-    </div>
+    <div class='d-flex justify-content-center row>'>
+        <div class="col-lg">
+            <div class="m-3  row text-center ">
+               
+            </div>
 
-    
-    <div class="m-3   row">
-        <div *ngIf="peliculas.length > 0 ; else empty " class="container">
+            <div class="m-3  row text-center  ">
+                <div class="row">
+                    <div class="col-10">
+                    <input  class="form-control me-2"   type="search" #busqueda  placeholder="Búsqueda por titulo" aria-label="Search">
+                </div>
+                <div class="col-2">
+                    <img (click)="getPeliculas(busqueda.value)" src="../../../assets/search.svg" alt="search">
+                </div>
+                </div>
+            </div>
 
-            <div class="list-group">
-                <app-card-peli (click)="getPeliculas(busqueda.value)" [routerLink]="['/info-peli', pelicula.imdbID ]"
-                    *ngFor=" let pelicula of peliculas" [pelicula]="pelicula">
 
-                </app-card-peli>
+            <div class="m-3   row">
+                <div *ngIf="peliculas.length > 0 ; else empty " class="container">
+
+                    <div class="list-group">
+                        <app-card-peli (click)="getPeliculas(busqueda.value)"
+                            [routerLink]="['/info-peli', pelicula.imdbID ]" *ngFor=" let pelicula of peliculas"
+                            [pelicula]="pelicula">
+
+                        </app-card-peli>
+                    </div>
+
+                </div>
+            </div>
+            <div class="m-3 row">
+                <ng-template #empty class="empty">
+                    <h3>No hay resultados</h3>
+                </ng-template>
             </div>
 
         </div>
-    </div>
 
 
-    <div class="m-3 row">
-        <ng-template #empty class="empty-h2">
-            <h3>No hay resultados</h3>
-        </ng-template>
+
+        
     </div>
 
 </div>
