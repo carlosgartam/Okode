@@ -1,0 +1,33 @@
+<div class="container ">
+    <div class="m-3  row text-center">
+        <h1>Listado de peliculas</h1>
+    </div>
+    <div class="m-3  row text-center ">
+        <div class="search">
+            <input class=m-3 type="text" #busqueda placeholder="Buscar Película">
+            <img (click)="getPeliculas(busqueda.value)" src="../../../assets/search.svg" alt="search">
+        </div>
+    </div>
+
+    
+    <div class="m-3   row">
+        <div *ngIf="peliculas.length > 0 ; else empty " class="container">
+
+            <div class="list-group">
+                <app-card-peli (click)="getPeliculas(busqueda.value)" [routerLink]="['/info-peli', pelicula.imdbID ]"
+                    *ngFor=" let pelicula of peliculas" [pelicula]="pelicula">
+
+                </app-card-peli>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="m-3 row">
+        <ng-template #empty class="empty-h2">
+            <h3>No hay resultados</h3>
+        </ng-template>
+    </div>
+
+</div>
